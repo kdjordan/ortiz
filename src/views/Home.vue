@@ -10,15 +10,13 @@
 // import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'home',
-  components: {
-    
-  }
+  name: 'home'
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .home {
-  margin-top: 10rem;
+  margin-top: 4rem;
+  flex: 1;
 }
 </style>
