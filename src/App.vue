@@ -1,14 +1,17 @@
 <template>
   <div id="app">
-    <Loading v-if="loading"/>
-    <Header />
-    <router-view/>
+    <Loading v-if="getIsLoading"/>
+    <div v-else>
+      <Header />
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue'
 import Loading from '@/components/Loading.vue'
+import { mapGetters} from 'vuex'
 
 export default {
   data() {
@@ -20,6 +23,9 @@ export default {
     Header,
     Loading  
   },
+  computed: {
+    ...mapGetters(['getIsLoading'])
+  }
 }
 </script>
 
@@ -51,9 +57,14 @@ export default {
   --smoky-black: hsla(21, 100%, 4%, 1);
 
 }
+html  {
+  // background-color: var(--mango-tango);
+  background-color: var(--white);
+}
 
-html, body{
+body{
   background-color: var(--mango-tango);
+  height: 100%;
 }
 
 #app {
@@ -62,6 +73,13 @@ html, body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 
 </style>
