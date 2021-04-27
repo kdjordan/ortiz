@@ -2,19 +2,19 @@
   <div id="app">
     <Loading v-if="getIsLoading"/>
     <div v-else class="main-wrapper">
-      <Logo />
       <Header />
+      <SideNav />
       <router-view />
     </div>
-    <Footer />
+    <BotFooter />
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue'
 import Loading from '@/components/Loading.vue'
-import Logo from '@/components/Logo.vue'
-import Footer from '@/components/Footer.vue'
+import BotFooter from '@/components/BotFooter.vue'
+import SideNav from '@/components/SideNav.vue'
 import { mapGetters} from 'vuex'
 
 export default {
@@ -26,8 +26,8 @@ export default {
   components: { 
     Header,
     Loading,
-    Logo,
-    Footer  
+    BotFooter,
+    SideNav  
   },
   computed: {
     ...mapGetters(['getIsLoading'])
@@ -64,11 +64,12 @@ export default {
   --font-zen: 'Zen Dots', cursive;
 
 }
-html, body  {
-  background-color: var(--mango-tango);
+html {
+  background-color: var(--light-salmon);
 }
 
 body {
+  background-color: var(--white);
   height: 100%;
   max-width: 1440px;
   margin: 0 auto;

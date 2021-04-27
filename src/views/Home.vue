@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    Home Page
+    <h1>This is an home page</h1>
     
   </div>
 </template>
@@ -16,7 +16,8 @@ export default {
 
 <style lang="scss">
 .home {
-  margin-top: 4rem;
+  padding-top: 4rem;
   flex: 1;
+  border-right: 2px solid var(--saddle-brown);
 }
 </style>

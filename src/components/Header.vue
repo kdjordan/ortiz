@@ -23,7 +23,9 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 10rem;
+  padding-left: 12rem;
+  // padding-left: 12%;
+  border: 2px solid var(--saddle-brown);
 }
 
 h2 {

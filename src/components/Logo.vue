@@ -19,7 +19,8 @@ export default {
     left: 0;
     z-index: 3;
     display: inline-block;
-    height: 12rem;
+    // height: 12rem;
+    width: 9rem;
     padding: 1rem;
     background-color: var(--saddle-brown);
     
