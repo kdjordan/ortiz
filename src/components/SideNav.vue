@@ -1,6 +1,6 @@
 <template>
   <div class="side-nav">
-    <Logo />
+    <!-- <Logo /> -->
     <ul>
       <li>Item XX</li>
       <li>Item XX</li>
@@ -25,7 +25,7 @@ export default {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 0; 
+  top: 6rem; 
   left: 0;
   z-index: 2;
   width: 9rem;

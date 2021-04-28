@@ -1,16 +1,19 @@
 <template>
   <div class="header">
-    <h2>Randolph Scott Ortiz</h2>
-   <div class="nav">
-      <router-link to="/">home</router-link>
-      <router-link to="/about">About</router-link>
-    </div>
+    <h1>Randy Ortiz</h1>
+   <nav>
+      <router-link to="/" class="link">home</router-link>
+      <router-link to="/about" class="link">About</router-link>
+      <router-link to="/about" class="link">Contact</router-link>
+    </nav>
   </div>
 </template>
 
 <script>
+// import Logo from '@/components/Logo.vue'
 export default {
-  name: 'Header',
+  name: 'header',
+  
 
 }
 </script>
@@ -21,27 +24,28 @@ export default {
   padding: 2rem;
   background-color: var(--light-salmon);
   display: flex;
+  flex-direction:  column;
   align-items: center;
-  justify-content: space-between;
-  padding-left: 12rem;
-  // padding-left: 12%;
-  border: 2px solid var(--saddle-brown);
+  justify-content: center;
+  border-bottom: 1px solid var(--saddle-brown);
 }
 
-h2 {
-  font-family: var(--font-antonio);
+h1 {
+  // font-family: var(--font-antonio);
   letter-spacing: 2px;
   color: var(--safety-orange-blaze-orange);
 }
 
-.nav {
-  // display: flex;
-  // align-items: center;
-  // justify-content: flex-end;
+nav {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  & a {
+  & .link {
     text-decoration: none;
     text-transform: uppercase;
+    margin: 0 1rem;
   }
 
 }

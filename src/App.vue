@@ -3,19 +3,21 @@
     <Loading v-if="getIsLoading"/>
     <div v-else class="main-wrapper">
       <Header />
-      <SideNav />
+      <!-- <Logo/> -->
+      <!-- <SideNav /> -->
       <router-view />
-    </div>
     <BotFooter />
+    </div>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue'
+import Logo from '@/components/Logo.vue'
 import Loading from '@/components/Loading.vue'
 import BotFooter from '@/components/BotFooter.vue'
 import SideNav from '@/components/SideNav.vue'
-import { mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   data() {
@@ -25,6 +27,7 @@ export default {
   },
   components: { 
     Header,
+    Logo,
     Loading,
     BotFooter,
     SideNav  
@@ -36,21 +39,19 @@ export default {
 </script>
 
 <style lang="scss">
-
 *,
 *::after,
 *::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  position: relative;
+  // position: relative;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Zen+Dots&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
 :root {
-
   --white: hsla(0, 0%, 100%, 1);
   --unbleached-silk: hsla(20, 97%, 88%, 1);
   --light-salmon: hsla(21, 97%, 76%, 1);
@@ -62,24 +63,17 @@ export default {
   --smoky-black: hsla(21, 100%, 4%, 1);
   --font-antonio: 'Antonio', sans-serif;
   --font-zen: 'Zen Dots', cursive;
-
-}
-html {
-  background-color: var(--light-salmon);
 }
 
-body {
+html, body {
   background-color: var(--white);
-  height: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
+  font-family: 'Poiret One', cursive;
 }
 
 a {
   font-family: var(--font-antonio);
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   color: var(--safety-orange-blaze-orange);
-  margin-right: 2rem;
   border-bottom: 1px solid transparent;
   transition: all .4s ease;
 
@@ -87,6 +81,11 @@ a {
     filter: opacity(50%);
     border-bottom: 1px solid var(--safety-orange-blaze-orange);
   }
+}
+
+li {
+  list-style-type: none;
+
 }
 
 #app {
@@ -99,7 +98,6 @@ a {
 .main-wrapper {
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 100vh;
 }
-
 </style>

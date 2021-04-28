@@ -1,6 +1,11 @@
 <template>
-  <div class="footer">
-      Footer
+  <div class="bottom">
+      <div class="bottom__left">
+          &#169; 2021 Oritiz Metals 
+      </div>
+      <div class="bottom__right">
+          BUILT BY
+      </div>
   </div>
 </template>
 
@@ -11,12 +16,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.footer {
-    padding: 4rem 0;
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
     background-color: var(--light-salmon);
     border-top: 2px solid var(--saddle-brown);
     z-index: 3;
-    border: 2px solid var(--saddle-brown);  
+    border-top: 1px solid var(--saddle-brown);  
+    margin-top: auto;
 }
 
 </style>
