@@ -6,14 +6,32 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     isLoading: false,
-    iammgeIndex: 1,
+    imageIndex: 3,
     images: [
       {
         index: 1,
-        link: '@/assets/img/firepit.jpg',
+        link: require('@/assets/img/firepit.jpg'),
         desc: 'Lord of the rings themed firepit',
         year: 2018
-    }
+      },
+      {
+        index: 2,
+        link: require('@/assets/img/bench.jpg'),
+        desc: 'Outdoor decorative bench',
+        year: 2018
+      },
+      {
+        index: 3,
+        link: require('@/assets/img/austin-wall.jpg'),
+        desc: 'Interior Wall Sculpture',
+        year: 2018
+      },
+      {
+        index: 4,
+        link: require('@/assets/img/platform.jpg'),
+        desc: 'Diving platform at private residence',
+        year: 2018
+      },
   ]
   },
   mutations: {

@@ -5,9 +5,11 @@
       <Logo />
     </div>
     <div class="home__center">
-      <img src="@/assets/img/firepit.jpg" alt="" class="full-image">
+      <img :src="`${getCurrentImage.link}`" alt="" class="full-image">
       <div class="home__center--desc">
-        Lord of the rings themed firepit
+        {{getCurrentImage.desc}}
+        {{getCurrentImage.link}}
+        
       </div>
     </div>
     <div class="home__right">
@@ -28,11 +30,15 @@
 <script>
 // @ is an alias to /src
 import Logo from '@/components/Logo.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'home',
   components: {
     Logo
+  },
+  computed: {
+    ...mapGetters(['getCurrentImage'])
   }
 }
 </script>
@@ -64,12 +70,13 @@ export default {
 
   &__center {
     flex: 2;
-    display: flex;
-    justify-content: center;
+    height: 90%;
     
     & .full-image {
+      width: 100%;
+      height: 100%;
       height: auto;
-      max-height: 500px;
+      max-width: 500px;
       line-height: 1;
       border-radius: 5px;
       box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
