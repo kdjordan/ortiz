@@ -4,14 +4,16 @@
     <div class="home__left">
       <Logo />
     </div>
-    <div class="home__center">
-      <img :src="`${getCurrentImage.link}`" alt="" class="full-image">
-      <div class="home__center--desc">
+    <figure>
+      <div class="img-wrap">
+        <img :src="`${getCurrentImage.link}`" alt="" class="full-image">
+      </div>
+      <figcaption class="home__center--desc">
         {{getCurrentImage.desc}}
         {{getCurrentImage.link}}
         
-      </div>
-    </div>
+      </figcaption>
+    </figure>
     <div class="home__right">
       <ul>
         <li>Image XX</li>
@@ -62,25 +64,39 @@ export default {
     background: var(--saddle-brown);
     padding: 1rem;
 
-    & .svg{ 
+    & .svg { 
       margin-top: 3rem;
       background: var(--saddle-brown);
     }
   }
 
-  &__center {
+  figure {
     flex: 2;
-    height: 90%;
-    
-    & .full-image {
+
+    & .img-wrap  {
+      padding: 2rem;
+      // border: 1px solid red;
       width: 100%;
-      height: 100%;
       height: auto;
-      max-width: 500px;
-      line-height: 1;
+      // overflow: hidden;
+    }
+
+    & .full-image {
+          width: auto;
+          max-width: 100%;
+          height: auto;
+          max-height: calc(100vh - 20rem);
+          min-height: 20rem;
+          object-fit: cover;
+          // display: block;
+      // max-width: 100%;
+      // height: 100%;
+      // max-height: 500px;
+      line-height: 0;
       border-radius: 5px;
       box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
     } 
+
   }
 
   &__right {
