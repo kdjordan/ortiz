@@ -1,30 +1,52 @@
 <template>
   <div class="home">
-    <!-- <Logo class="home__left"/> -->
-    <div class="home__left">
-      <Logo />
-    </div>
-    <figure>
-      <div class="img-wrap">
-        <img :src="`${getCurrentImage.link}`" alt="" class="full-image">
+    <!-- <div class="home__left">
+    </div>  -->
+    <div class="home__center">  
+      <div class="control" @click="move(0)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" style="fill:var(--cream);fill-rule:evenodd">
+          <path d="M14,1A13,13,0,1,1,1,14,13,13,0,0,1,14,1m0-1A14,14,0,1,0,28,14,14,14,0,0,0,14,0Z"/>
+          <rect x="6.5" y="13" width="15" height="2"/>
+        </svg>
       </div>
-      <figcaption class="home__center--desc">
-        {{getCurrentImage.desc}}
-        {{getCurrentImage.link}}
-        
-      </figcaption>
-    </figure>
-    <div class="home__right">
-      <ul>
-        <li>Image XX</li>
-        <li>Image XX</li>
-        <li>Image XX</li>
-        <li>Image XX</li>
-        <li>Image XX</li>
-      </ul>
+      <figure>
+        <div class="img-wrap">
+          <transition name="fade" mode="out-in">
+            <img :src="`${getCurrentImage.link}`" :key="getCurrentImage.link" alt="" class="full-image">
+          </transition>
+        </div>
+        <figcaption class="home__center--desc">
+          {{getCurrentImage.desc}}
+          <!-- {{getCurrentImage.link}} -->
+        </figcaption>
+      </figure>
+      <div class="control" @click="move(1)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" style="fill:var(--cream);fill-rule:evenodd">
+          <path d="M14,1A13,13,0,1,1,1,14,13,13,0,0,1,14,1m0-1A14,14,0,1,0,28,14,14,14,0,0,0,14,0Z"/>
+          <polygon points="21.5 12.35 15.4 12.35 15.4 6.35 13.4 6.35 13.4 12.35 6.5 12.35 6.5 14.35 13.4 14.35 13.4 21.35 15.4 21.35 15.4 14.35 21.5 14.35 21.5 12.35"/>
+      </svg>
+      </div>
     </div>
-    
-    
+    <!-- <div class="home__right">
+      <ul>
+        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
+        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
+        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
+        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
+        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
+        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
+        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
+        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
+        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
+        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
+        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
+        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
+        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
+        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
+        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
+        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
+      </ul>
+    </div> -->
   </div>
 <!-- </div> -->
 </template>
@@ -41,78 +63,108 @@ export default {
   },
   computed: {
     ...mapGetters(['getCurrentImage'])
+  },
+  methods: {
+    move(dir) {
+      if (dir == 1) {
+        this.$store.commit('moveIndex', 1)
+      } else if(dir ==0) {
+        this.$store.commit('moveIndex', 0)
+        
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss">
 .home {
-  // background: url('../assets/img/circle-back.svg') bottom 110% right 400%;
-  // background-repeat: no-repeat;
-  // background-size: 90%;
   display: flex;
-  // flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  font-family: var(--font-antonio);
+  letter-spacing: 1px;
   flex: 1;
+  margin-bottom: 2rem;
+  z-index: 2;
 
   &__left { 
     flex: 1;
-    height: 100%;
     max-width: 150px;
     min-width: 100px;
-    background: var(--saddle-brown);
     padding: 1rem;
 
     & .svg { 
       margin-top: 3rem;
-      background: var(--saddle-brown);
     }
   }
 
+  &__center {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+  }
+
   figure {
-    flex: 2;
+    flex: 3;
 
     & .img-wrap  {
-      padding: 2rem;
-      // border: 1px solid red;
+      padding: 0 2rem 2rem 2rem;
       width: 100%;
       height: auto;
-      // overflow: hidden;
     }
 
     & .full-image {
-          width: auto;
-          max-width: 100%;
-          height: auto;
-          max-height: calc(100vh - 20rem);
-          min-height: 20rem;
-          object-fit: cover;
-          // display: block;
-      // max-width: 100%;
-      // height: 100%;
-      // max-height: 500px;
-      line-height: 0;
-      border-radius: 5px;
-      box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: calc(100vh - 15rem);
+        min-height: 20rem;
+        // object-fit: cover;
+        line-height: 0;
+        border-radius: 5px;
+        box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
     } 
 
   }
 
   &__right {
-    background: var(--saddle-brown);
+    border-top: 2px solid var(--cream);
+    // border-bottom: 1px solid var(--hot-orange);
     flex: 1;
-    height: 100%;
+    max-height: 60vh;
     max-width: 150px;
     min-width: 100px;
+    overflow-y: scroll;
 
     & ul {
+      height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: space-evenly;
       color: var(--white);
+
+      & li {
+        margin: 1rem 0;
+      }
     }
   }
+}
 
+.control {
+  cursor: pointer;
+  width: 30px;
+  transition: all .4s ease;
+  &:hover {
+    filter: opacity(50%);
+  }
+
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

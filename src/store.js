@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     isLoading: false,
-    imageIndex: 3,
+    imageIndex: 0,
     images: [
       {
         index: 1,
@@ -32,11 +32,35 @@ export default new Vuex.Store({
         desc: 'Diving platform at private residence',
         year: 2018
       },
+      {
+        index: 4,
+        link: require('@/assets/img/hero-symbiosis.jpg'),
+        desc: 'Outdoor public sculpture',
+        year: 2018,
+        thm: require('@/assets/img/thm-sym.jpg')
+      },
   ]
   },
   mutations: {
     setIsLoading(state, payload){
       state.isLoading = payload
+    },
+    moveIndex(state, payload) {
+      if (payload == 1) {
+        if(state.imageIndex == state.images.length-1) {
+          console.log('firing')
+          state.imageIndex = 0
+        } else if (state.imageIndex < state.images.length-1){
+          state.imageIndex++
+        }
+
+      } else if (payload == 0) {
+          if(state.imageIndex == 0) {
+            state.imageIndex = state.images.length-1
+          } else if(state.imageIndex > 0) {
+            state.imageIndex--
+          }
+      }
     }
   },
   getters: {

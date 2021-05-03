@@ -3,8 +3,7 @@
     <Loading v-if="getIsLoading"/>
     <div v-else class="main-wrapper">
       <Header />
-      <!-- <Logo/> -->
-      <!-- <SideNav /> -->
+      <Logo/>
       <router-view />
     <BotFooter />
     </div>
@@ -39,6 +38,9 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
 *,
 *::after,
 *::before {
@@ -48,51 +50,60 @@ export default {
   // position: relative;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Zen+Dots&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
-
+.circles {
+  width: 35rem;
+  position: fixed;
+  bottom: -10rem;
+  right: -10rem;
+  z-index: 1;
+}
 :root {
-  --white: hsla(0, 0%, 100%, 1);
-  --unbleached-silk: hsla(20, 97%, 88%, 1);
-  --light-salmon: hsla(21, 97%, 76%, 1);
-  --mango-tango: hsla(21, 97%, 64%, 1);
-  --safety-orange-blaze-orange: hsla(21, 97%, 52%, 1);
-  --sinopia: hsla(21, 97%, 40%, 1);
-  --saddle-brown: hsla(21, 97%, 28%, 1);
-  --seal-brown: hsla(21, 98%, 16%, 1);
-  --smoky-black: hsla(21, 100%, 4%, 1);
   --font-antonio: 'Antonio', sans-serif;
   --font-zen: 'Zen Dots', cursive;
+
+/* Color Theme Swatches in HSLA */
+--blue : hsla(300, 11%, 31%, 1); 
+// --cream : hsla(28, 67%, 84%, 1); 
+--cream : hsla(28, 91%, 91%, 1); 
+--hot-orange : hsla(22, 88%, 56%, 1); 
+--orange : hsla(16, 68%, 53%, 1); 
+--brown : hsla(11, 50%, 36%, 1); 
+  --black: hsla(21, 100%, 4%, .5);
 }
 
+
+
 html, body {
-  background-color: var(--white);
+  background-color: var(--orange);
+  // background-color:  #808080;
   font-family: 'Poiret One', cursive;
+  color: var(--cream);
+  letter-spacing: 2px;;
 }
 
 a {
   font-family: var(--font-antonio);
+  color: var(--cream);
   letter-spacing: 3px;
-  color: var(--safety-orange-blaze-orange);
   border-bottom: 1px solid transparent;
+  text-decoration: none;
   transition: all .4s ease;
 
   &:hover {
     filter: opacity(50%);
-    border-bottom: 1px solid var(--safety-orange-blaze-orange);
+    border-bottom: 1px solid var(--cream);
   }
 }
 
 li {
   list-style-type: none;
-
 }
 
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: var(--cream);
 }
 
 .main-wrapper {
