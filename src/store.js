@@ -49,6 +49,9 @@ export default new Vuex.Store({
     setIsLoading(state, payload){
       state.isLoading = payload
     },
+    setImageIndex(state, payload) {
+      state.imageIndex = payload;
+    },
     moveIndex(state, payload) {
       if (payload == 1) {
         if(state.imageIndex == state.images.length-1) {

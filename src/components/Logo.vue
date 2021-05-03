@@ -23,7 +23,7 @@ export default {
     margin-top: 1rem;
 
   @media (max-width: 37.5em) {
-    width: 4rem;
+    width: 3rem;
   }
 
 }

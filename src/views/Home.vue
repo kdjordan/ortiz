@@ -27,7 +27,12 @@
       </div>
     </div>
     <div class="home__right">
-      <div v-for="image in getAllImages" :key="image.index" :class="{active: image.index == getCurrentImage.index}">
+      <div v-for="image in getAllImages" 
+      class="home__right--entry"
+      :key="image.index" 
+      :class="{active: image.index == getCurrentImage.index}"
+      @click=setImageIndex(image.index)
+      >
         {{image.holder}}
       </div>
     </div>
@@ -55,6 +60,9 @@ export default {
       } else if(dir ==0) {
         this.$store.commit('moveIndex', 0)
       }
+    },
+    setImageIndex(index){
+      this.$store.commit('setImageIndex', index)
     }
   }
 }
@@ -124,8 +132,17 @@ export default {
     top: 0;
     right: 0;
     margin-right: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
     text-align: left;
+
+    &--entry {
+      cursor: pointer;
+      transition: all .4s ease;
+
+      &:hover {
+        filter: opacity(50%);
+      }
+    }
   }
 }
 
@@ -136,7 +153,6 @@ export default {
   &:hover {
     filter: opacity(50%);
   }
-
 }
 
 .active {
