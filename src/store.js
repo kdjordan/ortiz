@@ -9,35 +9,39 @@ export default new Vuex.Store({
     imageIndex: 0,
     images: [
       {
-        index: 1,
+        index: 0,
         link: require('@/assets/img/firepit.jpg'),
         desc: 'Lord of the rings themed firepit',
-        year: 2018
+        year: 2018,
+        holder: 'Firepit'
+      },
+      {
+        index: 1,
+        link: require('@/assets/img/bench.jpg'),
+        desc: 'Outdoor decorative bench',
+        year: 2018,
+        holder: 'Bench'
       },
       {
         index: 2,
-        link: require('@/assets/img/bench.jpg'),
-        desc: 'Outdoor decorative bench',
-        year: 2018
+        link: require('@/assets/img/austin-wall.jpg'),
+        desc: 'Interior Wall Sculpture',
+        year: 2018,
+        holder: 'Sculpture'
       },
       {
         index: 3,
-        link: require('@/assets/img/austin-wall.jpg'),
-        desc: 'Interior Wall Sculpture',
-        year: 2018
-      },
-      {
-        index: 4,
         link: require('@/assets/img/platform.jpg'),
         desc: 'Diving platform at private residence',
-        year: 2018
+        year: 2018,
+        holder: 'Dive'
       },
       {
         index: 4,
         link: require('@/assets/img/hero-symbiosis.jpg'),
         desc: 'Outdoor public sculpture',
         year: 2018,
-        thm: require('@/assets/img/thm-sym.jpg')
+        holder: 'Symbiosis'
       },
   ]
   },
@@ -69,6 +73,9 @@ export default new Vuex.Store({
     },
     getCurrentImage(state) {
       return state.images[state.imageIndex]
+    },
+    getAllImages(state) {
+      return state.images
     }
   },
   actions: {

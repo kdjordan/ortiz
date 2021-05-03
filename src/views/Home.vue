@@ -17,7 +17,6 @@
         </div>
         <figcaption class="home__center--desc">
           {{getCurrentImage.desc}}
-          <!-- {{getCurrentImage.link}} -->
         </figcaption>
       </figure>
       <div class="control" @click="move(1)">
@@ -27,26 +26,11 @@
       </svg>
       </div>
     </div>
-    <!-- <div class="home__right">
-      <ul>
-        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
-        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
-        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
-        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
-        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
-        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
-        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
-        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
-        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
-        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
-        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
-        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
-        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
-        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
-        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
-        <li> <img src="@/assets/img/thm-sym.jpg"> </li>
-      </ul>
-    </div> -->
+    <div class="home__right">
+      <div v-for="image in getAllImages" :key="image.index" :class="{active: image.index == getCurrentImage.index}">
+        {{image.holder}}
+      </div>
+    </div>
   </div>
 <!-- </div> -->
 </template>
@@ -62,7 +46,7 @@ export default {
     Logo
   },
   computed: {
-    ...mapGetters(['getCurrentImage'])
+    ...mapGetters(['getCurrentImage', 'getAllImages'])
   },
   methods: {
     move(dir) {
@@ -70,7 +54,6 @@ export default {
         this.$store.commit('moveIndex', 1)
       } else if(dir ==0) {
         this.$store.commit('moveIndex', 0)
-        
       }
     }
   }
@@ -78,6 +61,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/css/animations.scss';
+
 .home {
   display: flex;
   align-items: center;
@@ -129,25 +114,12 @@ export default {
   }
 
   &__right {
-    border-top: 2px solid var(--cream);
-    // border-bottom: 1px solid var(--hot-orange);
-    flex: 1;
-    max-height: 60vh;
-    max-width: 150px;
-    min-width: 100px;
-    overflow-y: scroll;
-
-    & ul {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      color: var(--white);
-
-      & li {
-        margin: 1rem 0;
-      }
-    }
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
   }
 }
 
@@ -161,10 +133,8 @@ export default {
 
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+.active {
+  color: var(--blue);
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
+
 </style>

@@ -4,7 +4,9 @@
     <div v-else class="main-wrapper">
       <Header />
       <Logo/>
-      <router-view />
+      <transition name="fade" mode="out-in">
+        <router-view />
+      </transition>
     <BotFooter />
     </div>
   </div>
@@ -40,6 +42,7 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Zen+Dots&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import '@/assets/css/animations.scss';
 
 *,
 *::after,
