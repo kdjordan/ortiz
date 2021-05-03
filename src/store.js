@@ -11,21 +11,21 @@ export default new Vuex.Store({
       {
         index: 0,
         link: require('@/assets/img/firepit.jpg'),
-        desc: 'Lord of the rings themed firepit',
+        desc: 'Lord of the Rings themed firepit',
         year: 2018,
         holder: 'Firepit'
       },
       {
         index: 1,
         link: require('@/assets/img/bench.jpg'),
-        desc: 'Outdoor decorative bench',
+        desc: 'Outdoor bench',
         year: 2018,
         holder: 'Bench'
       },
       {
         index: 2,
         link: require('@/assets/img/austin-wall.jpg'),
-        desc: 'Interior Wall Sculpture',
+        desc: 'Interior wall sculpture',
         year: 2018,
         holder: 'Sculpture'
       },
@@ -39,7 +39,7 @@ export default new Vuex.Store({
       {
         index: 4,
         link: require('@/assets/img/hero-symbiosis.jpg'),
-        desc: 'Outdoor public sculpture',
+        desc: 'Outdoor public sculpture - Symbiosis',
         year: 2018,
         holder: 'Symbiosis'
       },

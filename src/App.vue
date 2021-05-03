@@ -40,8 +40,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import '@/assets/css/animations.scss';
 
 *,
@@ -50,7 +51,6 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  // position: relative;
 }
 
 .circles {
@@ -63,6 +63,7 @@ export default {
 :root {
   --font-antonio: 'Antonio', sans-serif;
   --font-zen: 'Zen Dots', cursive;
+  --font-roboto: 'Roboto', sans-serif;
 
 /* Color Theme Swatches in HSLA */
 --blue : hsla(300, 11%, 31%, 1); 
@@ -78,19 +79,20 @@ export default {
 
 html, body {
   background-color: var(--orange);
-  // background-color:  #808080;
   font-family: 'Poiret One', cursive;
   color: var(--cream);
-  letter-spacing: 2px;;
 }
 
-a {
+a, .link {
   font-family: var(--font-antonio);
   color: var(--cream);
   letter-spacing: 3px;
+  padding-bottom: 3px;
   border-bottom: 1px solid transparent;
   text-decoration: none;
   transition: all .4s ease;
+  text-transform: uppercase;
+  margin: 0 1rem;
 
   &:hover {
     filter: opacity(50%);

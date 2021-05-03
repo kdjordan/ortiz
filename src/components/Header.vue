@@ -5,14 +5,14 @@
       <router-link to="/" class="link">home</router-link>
       <router-link to="/about" class="link">About</router-link>
     </nav>
-    <div class="contact"> 
+    <!-- <div class="contact"> 
         <div>
-            &#9993;&nbsp;<a href="mailto:ortiz@gmail.com">ortiz@gmail.com</a> 
+            <a href="mailto:ortiz@gmail.com">ortiz@gmail.com</a> 
         </div>
         <div>
-            &#9742;&nbsp;<a href="tel:541-510-2182">541-510-2182</a> 
+            <a href="tel:541-510-2182">541-510-2182</a> 
         </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -35,12 +35,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  & .link {
-    text-decoration: none;
-    text-transform: uppercase;
-    margin: 0 1rem;
-  }
 }
 
 .contact {
@@ -53,5 +47,18 @@ nav {
   font-family: var(--font-antonio);
   border-bottom: double var(--cream);
   line-height: 1.5;
+
+  & a {
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 43em) {
+    display: none;
+  }
+}
+
+.router-link-exact-active{
+  border-bottom: 1px solid var(--cream);
+  filter: opacity(50%);
 }
 </style>

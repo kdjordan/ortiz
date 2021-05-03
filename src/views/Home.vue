@@ -88,6 +88,10 @@ export default {
     display: flex;
     align-items: center;
     font-size: 1.3rem;
+
+    &--desc {
+      font-family: var(--font-roboto);
+    }
   }
 
   figure {
@@ -100,11 +104,13 @@ export default {
     }
 
     & .full-image {
+      display: block;
         width: auto;
         max-width: 100%;
-        height: auto;
         max-height: calc(100vh - 15rem);
         min-height: 20rem;
+        min-width: 100%;
+        height: auto;
         // object-fit: cover;
         line-height: 0;
         border-radius: 5px;
@@ -115,7 +121,7 @@ export default {
 
   &__right {
     position: fixed;
-    bottom: 0;
+    top: 0;
     right: 0;
     margin-right: 1rem;
     margin-bottom: 1rem;
