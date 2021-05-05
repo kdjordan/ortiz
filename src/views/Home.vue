@@ -162,6 +162,10 @@ export default {
   transition: all .4s ease;
   margin: 0 1rem;
 
+  @media (max-width: 37.5em) {
+      min-width: 30px;
+    }
+
   &:hover {
     filter: opacity(50%);
   }
