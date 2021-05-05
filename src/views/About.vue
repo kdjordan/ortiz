@@ -26,7 +26,7 @@ export default {
 <style scoped lang="scss">
 
 .about {
-  font-family: var(--font-roboto);
+  font-family: var(--font-antonio);
   letter-spacing: 1px;
   font-size: 1.2rem;
   display: flex;
@@ -38,11 +38,6 @@ export default {
   line-height: 1.4;
   margin-bottom: auto;
   margin-top: 2rem;
-
-   @media (max-width: 37.5em) {
-    max-width: 80%;
-    margin: 0 auto;
-  }
 
   & div {
     text-align: left;

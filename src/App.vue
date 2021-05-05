@@ -86,7 +86,6 @@ html, body {
 a, .link {
   font-family: var(--font-antonio);
   color: var(--cream);
-  letter-spacing: 3px;
   padding-bottom: 3px;
   border-bottom: 1px solid transparent;
   text-decoration: none;

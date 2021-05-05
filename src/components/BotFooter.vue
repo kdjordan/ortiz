@@ -24,7 +24,7 @@
 
 <style scoped lang="scss">
 .bottom {
-   border-top: 1px solid var(--hot-orange);
+    border-top: 1px solid var(--hot-orange);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -33,8 +33,18 @@
     padding-bottom: .4rem;
     font-family: var(--font-antonio);
 
+    @media (max-width: 35em) {
+        flex-direction: column;
+    }
+
+
     &__mid {
         font-size: 1.4rem;
+        line-height: 1.8;
+
+         @media (max-width: 35em) {
+            order: -1;
+        }
     }
 }
 
