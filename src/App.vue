@@ -42,7 +42,6 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import '@/assets/css/animations.scss';
 
 *,

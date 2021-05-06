@@ -98,7 +98,7 @@ export default {
     }
 
     &--desc {
-      font-family: var(--font-roboto);
+      font-family: var(--font-antonio);
       margin-top: 1rem;
     }
   }

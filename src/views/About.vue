@@ -11,7 +11,7 @@
         Trained in the classical drawing and sculptural methods passed down over millennia, Randy has amassed extensive knowledge of long-established design principals and techniques trusted throughout humanities’ imaginative evolution. Working apace with contemporary building trends in wide ranging mediums has allowed Randy to successfully envision a channel between modern design esthetics and those of antiquity.
       </p>
       <p>
-        His work can be found in both private and public collections throughout the Willamette valley and beyond
+        His work can be found in both private and public collections throughout the Willamette valley and beyond.
       </p>
     </div>
   </div>
