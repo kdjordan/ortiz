@@ -1,14 +1,16 @@
 <template>
   <div id="app">
+    <transition name="fade" mode="out-in">
     <Loading v-if="getIsLoading"/>
     <div v-else class="main-wrapper">
-      <Header />
-      <Logo/>
-      <transition name="fade" mode="out-in">
-        <router-view />
-      </transition>
-    <BotFooter />
+        <Header />
+        <Logo/>
+        <transition name="fade" mode="out-in">
+          <router-view />
+        </transition>
+        <BotFooter />
     </div>
+    </transition>
   </div>
 </template>
 

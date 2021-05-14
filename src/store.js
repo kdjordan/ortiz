@@ -55,7 +55,6 @@ export default new Vuex.Store({
     moveIndex(state, payload) {
       if (payload == 1) {
         if(state.imageIndex == state.images.length-1) {
-          console.log('firing')
           state.imageIndex = 0
         } else if (state.imageIndex < state.images.length-1){
           state.imageIndex++
@@ -79,7 +78,10 @@ export default new Vuex.Store({
     },
     getAllImages(state) {
       return state.images
-    }
+    },
+    getImageIndex(state) {
+      return state.imgeIndex
+    },
   },
   actions: {
 

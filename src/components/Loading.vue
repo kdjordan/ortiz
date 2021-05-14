@@ -15,11 +15,11 @@ export default {
   mounted() {
     gsap.set('.outer, .inner', { opacity: 0})
     let tl = gsap.timeline()
-    tl.to('.outer', { opacity: 1,  duration: 1.5})
     tl.to('.inner', { opacity: 1,  duration: 1.5})
+    tl.to('.outer', { opacity: 1,  duration: 1.5})
     tl.to('.outer, .inner', { opacity: 0 })
     
-    tl.to('.loading', {width: 0})
+    
     setTimeout(()=> {
         this.$store.commit('setIsLoading', false)
       }, 4000)
@@ -35,8 +35,7 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    // background: var(--mango-tango);
-    background: red;
+    background: var(--mango-tango);
     height: 100vh;
     width: 100vw;
 
