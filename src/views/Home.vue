@@ -25,6 +25,7 @@
       </div>
     </div>
     <div class="sider">
+    <transition-group name='fade' tag='div'>
         <div v-for="image in getAllImages" 
         class="sider--entry"
         :key="image.index" 
@@ -33,6 +34,7 @@
         >
           {{image.holder}}
         </div>
+      </transition-group>
     </div>
   </div>
 </template>
@@ -141,6 +143,7 @@ export default {
       position: static;
       display: flex;
       justify-content: space-between;
+      text-align: center;
     }
 
     &--entry {
@@ -185,6 +188,20 @@ export default {
     
   }
   
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.8s ease;
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+  visibility: hidden;
 }
 
 </style>

@@ -2,7 +2,7 @@
     <div class="bottom">
         <div class="bottom__left">
             <div>
-                <a href="mailto:ortiz@gmail.com">ortizmetals@gmail.com</a> 
+                <a href="mailto:ortiz@gmail.com" target="_blank" rel="noopener noreferrer nofollow">ortizmetals@gmail.com</a> 
             </div>
             <div>
                 <a href="tel:541-510-2182">541-510-2182</a> 
@@ -35,6 +35,7 @@
 
     @media (max-width: 35em) {
         flex-direction: column;
+        gap: 10px;
     }
 
 
