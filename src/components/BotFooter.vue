@@ -13,10 +13,10 @@
         </div>
         <div class="bottom__right">
             <div>
-                &#169; 2021 Ortiz Metals 
+                &#169; 2023 Ortiz Metals 
             </div>
             <div>
-                BUILT BY : Kevin Jordan
+                BUILT BY : <a href="https://www.kevinjordan.dev" target="_blank" rel="noopener noreferrer nofollow">Kevin Jordan</a>
             </div>
         </div>    
     </div>

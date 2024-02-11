@@ -76,7 +76,6 @@ export default {
   justify-content: center;
   font-family: var(--font-antonio);
   letter-spacing: 1px;
-  margin-top: 5%;
   z-index: 2;
   height: 100%;
   margin-bottom: auto;

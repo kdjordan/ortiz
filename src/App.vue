@@ -1,8 +1,10 @@
 <template>
 	<div id="app">
-		<Loading />
-		<transition name="fade" mode="out-in">
-			<div>
+		<div v-if="loading">
+			<Loading @handleLoading="setLoadingFalse" />
+		</div>
+		<div v-else>
+			<transition name="fade" mode="out-in">
 				<div class="main-wrapper">
 					<Header />
 					<Logo />
@@ -11,8 +13,8 @@
 					</transition>
 					<BotFooter />
 				</div>
-			</div>
-		</transition>
+			</transition>
+		</div>
 	</div>
 </template>
 
@@ -21,15 +23,33 @@
 	import Logo from '@/components/Logo.vue';
 	import Loading from '@/components/Loading.vue';
 	import BotFooter from '@/components/BotFooter.vue';
+	import gsap from 'gsap';
 
 	export default {
+		mounted() {
+			console.log(document.querySelector('.main-wrapper'));
+		},
+		data() {
+			return {
+				loading: true,
+			};
+		},
+		methods: {
+			setLoadingFalse() {
+				
+				let tl = gsap.timeline();
+				console.log('setting loading to false');
+				this.loading = false;
+				tl.set('.main-wrapper', { opacity: 0 });
+			},
+		},
 		components: {
 			Header,
 			Logo,
 			Loading,
-			BotFooter
-		}
-  }
+			BotFooter,
+		},
+	};
 </script>
 
 <style lang="scss">
