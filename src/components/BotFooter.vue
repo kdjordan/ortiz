@@ -32,6 +32,7 @@
     padding-top: .4rem;
     padding-bottom: .4rem;
     font-family: var(--font-antonio);
+    letter-spacing: 1px;
 
     @media (max-width: 35em) {
         flex-direction: column;

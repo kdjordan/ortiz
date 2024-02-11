@@ -21,33 +21,15 @@
 	import Logo from '@/components/Logo.vue';
 	import Loading from '@/components/Loading.vue';
 	import BotFooter from '@/components/BotFooter.vue';
-	import SideNav from '@/components/SideNav.vue';
-	import { gsap } from 'gsap';
 
 	export default {
-		data() {
-			return {
-				loading: true,
-			};
-		},
 		components: {
 			Header,
 			Logo,
 			Loading,
-			BotFooter,
-			SideNav,
-		},
-		mounted() {
-			console.log('running');
-			gsap.set('.outer, .inner', { opacity: 0 });
-      gsap.set('loading-wrapper', {x: 0})
-			let tl = gsap.timeline();
-			tl.to('.inner', { opacity: 1, duration: 1.5 });
-			tl.to('.outer', { opacity: 1, duration: 1.5 });
-			tl.to('.outer, .inner', { opacity: 0 });
-      tl.to('loading-wrapper', {x:1000, duration: 1.5});
-		},
-	};
+			BotFooter
+		}
+  }
 </script>
 
 <style lang="scss">
@@ -124,34 +106,5 @@
 		display: flex;
 		flex-direction: column;
 		height: 100vh;
-	}
-
-	//opening animation
-	.loading {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		position: absolute;
-		top: 0;
-		left: 0;
-		background: var(--mango-tango);
-		height: 100vh;
-		width: 100vw;
-		
-
-		&-wrapper {
-			display: block;
-			height: 100vh;
-			width: 100vw;
-			// position: absolute;
-			// top: 0;
-			// right: 0;
-			background-color: red;
-      z-index: 99;
-		}
-
-		&__logo {
-			width: 20%;
-		}
 	}
 </style>

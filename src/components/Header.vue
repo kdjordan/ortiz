@@ -1,5 +1,5 @@
 <template>
-  <div class="head">
+  <div class="header">
     <h1>Randy Ortiz</h1>
    <nav>
       <router-link to="/" class="link">home</router-link>
@@ -9,13 +9,14 @@
 </template>
 
 <style scoped lang="scss">
-.head {
+.header {
   padding: 1rem 0;
   background-color: var(--orange);
   display: flex;
   flex-direction:  column;
   align-items: center;
   justify-content: center;
+  letter-spacing: 1px;
 }
 
 h1 {

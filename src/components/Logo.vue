@@ -15,12 +15,14 @@ export default {
 
 <style scoped lang="scss">
 .logo {
-    position: fixed;
+  position: fixed;
     top: 0;
     left: 0;
     width:  8%;
     margin-left: 1rem;
     margin-top: 1rem;
+    z-index:1;
+    isolation: isolate;
 
   @media (max-width: 37.5em) {
     width: 3rem;

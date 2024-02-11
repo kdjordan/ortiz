@@ -1,7 +1,7 @@
 <template>
-	<div class="loading-wrapper">
-		<div class="loading">
-			<div class="loading__logo">
+	
+		<div class="overlay">
+			<div class="logo">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 200.51 578.74"
@@ -19,47 +19,47 @@
 				</svg>
 			</div>
 		</div>
-	</div>
+	
 </template>
 
-//
 <script>
-	// import { gsap } from "gsap";
+import gsap from 'gsap';
 
-	// export default {
-	//   mounted() {
-	//     gsap.set('.outer, .inner', { opacity: 0})
-	//     let tl = gsap.timeline()
-	//     tl.to('.inner', { opacity: 1,  duration: 1.5})
-	//     tl.to('.outer', { opacity: 1,  duration: 1.5})
-	//     tl.to('.outer, .inner', { opacity: 0 })
-
-	//     setTimeout(()=> {
-	//         this.$store.commit('setIsLoading', false)
-	//       }, 4000)
-	//   }
-	// }
-	//
+	export default {
+		mounted() {
+			// console.log('running');
+			let tl = gsap.timeline();
+			tl.set('.outer, .inner', { opacity: 0 });
+			tl.to('.inner', { opacity: 1, duration: 1.5 });
+			tl.to('.outer', { opacity: 1, duration: 1.5 });
+			tl.to('.outer, .inner', { opacity: 0 });
+			tel.to('overlay', )
+			
+		}
+	};
 </script>
 
-//
 <style lang="scss" scoped>
-	// .loading {
-	//     display: flex;
-	//     align-items: center;
-	//     justify-content: center;
-	//     position: absolute;
-	//     top: 0;
-	//     left: 0;
-	//     background: var(--mango-tango);
-	//     height: 100vh;
-	//     width: 100vw;
-	//     z-index: 99;
+	//opening animation
+	.overlay {
+			display: block;
+			top: 0;
+			left: 0;
+			background-color: var(--mango-tango);
+			height: 100vh;
+			width: 100vw;
+			z-index: 99;
+			
+		}
 
-	//     &__logo {
-	//       width: 20%;
-	//     }
-	// }
-
-	//
+		.logo {
+			position: fixed;
+			top: 15%;
+			left: 40%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 20%;
+			z-index: 9;
+		}
 </style>
