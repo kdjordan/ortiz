@@ -36,7 +36,8 @@
 					tl.set('.logo', { top: '20%' });
 					tl.to('.inner', { opacity: 1, duration: 1.5 });
 					tl.to('.outer', { opacity: 1, duration: 1.5 });
-					tl.to('.overlay', { opacity: 0, duration: 2, onComplete: resolve});
+					tl.to('.logo', { scale:50, duration: 2, });
+					tl.to('.overlay', { opacity: 0, duration: 2, delay: -2, onComplete: resolve});
 				});
 			},
 		},
